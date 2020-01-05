@@ -14,36 +14,36 @@ if (rng > 0 && rng < 0.34) {
 }
 
 function rockPaperScissors(choice1, choice2) {
-    if (choice1 === choice2) {
-        return 'tie game!';
-    }
     if (choice1 === rock) {
         if (choice2 === scissors) {
             return 'rock wins';
-        }
-    } else {
-        return 'paper wins';
-    }
-    if (choice1 === paper) {
-        if (choice2 === rock) {
+        } else if (choice2 === paper) {
             return 'paper wins';
-        }
-    } else {
-        if (choice2 === scissors) {
-            return 'scissors wins!';
+        } else {
+            return 'tie game';
         }
     }
+
+    if (choice1 === paper) {
+        if (choice2 === scissors) {
+            return 'scissors wins';
+        } else if (choice2 === rock) {
+            return 'paper wins!';
+        } else {
+            return 'tie game';
+        }
+    }
+
     if (choice1 === scissors) {
         if (choice2 === rock) {
             return 'rock wins';
+        } else if (choice2 === paper) {
+            return 'scissors wins';
         } else {
-            if (choice2 === paper) {
-                return 'scissors wins';
-            }
+            return 'tie game';
         }
     }
 }
-
 console.log(`User chose: ${user}`);
 console.log(`Computer chose: ${rng}`);
 // comparison(user, rng);
