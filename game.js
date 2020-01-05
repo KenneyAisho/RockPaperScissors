@@ -4,7 +4,8 @@ const scissors = 'scissors';
 
 let user = prompt("Choose rock, paper, or scissors");
 let rng = Math.random();
-if (rng < 0.34) {
+//console.log(rng);
+if (rng > 0 && rng < 0.34) {
     rng = rock;
 } else if (rng <= 0.67) {
     rng = paper;
@@ -12,7 +13,7 @@ if (rng < 0.34) {
     rng = scissors;
 }
 
-function comparison(choice1, choice2) {
+function rockPaperScissors(choice1, choice2) {
     if (choice1 === choice2) {
         return 'tie game!';
     }
@@ -43,6 +44,7 @@ function comparison(choice1, choice2) {
     }
 }
 
-console.log("User choice", +user);
-console.log("Computer choice : ", +rng);
-console.log(comparison(user, rng));
+console.log(`User chose: ${user}`);
+console.log(`Computer chose: ${rng}`);
+// comparison(user, rng);
+console.log(rockPaperScissors(user, rng));
